@@ -7,7 +7,7 @@ For now build it with vasm from the command line. To get a regular Amiga executa
 
 
 ```
-vasmm68k_mot main.asm -o tinytro.exe -m68000 -Fhunkexe -nosym
+vasmm68k_mot main.asm -o tinytro.exe -m68000 -Fhunkexe -kick1hunks -nosym
 ```
 
 If you want an absolute binary file assembled to $4000
