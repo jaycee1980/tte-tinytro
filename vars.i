@@ -46,6 +46,7 @@ Center:				rs.w	1
 KeyUp:				rs.b	1
 KeyDown:			rs.b	1
 KeyEnter:			rs.b	1
+					rs.b	1	;pad
 
 HoffBanItems:			rs.b	Ban_SIZEOF*HOFFBANNER_ROW
 

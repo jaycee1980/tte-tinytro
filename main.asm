@@ -468,6 +468,7 @@ KeyboardIRQ:		movem.l	d0-d1/a0-a1/a6,-(sp)
 
 	IF SYSTEM_NICE|USETOPAZ
 GfxName:		dc.b	"graphics.library",0
+			EVEN
 	ENDIF
 
 	IF USETOPAZ=0
@@ -526,7 +527,6 @@ MenuText:		INCBIN	"text/menu.txt"
 			dc.b	0
 	ENDIF
 
-			EVEN
 ; ---------------------------------------------------------
 ; Chip Data
 
