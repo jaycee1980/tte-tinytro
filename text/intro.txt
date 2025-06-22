@@ -1,0 +1,23 @@
+
+
+THE TWITCH ELITE
+
+: PRESENTS :
+
+-= TinyTro Update =-
+
+:--------CREDITS--------:
+: Code   : h0ffman      :
+: Music  : h0ffman      :
+: ASCII  : ne7 & FuZioN :
+: Synth  : Blueberry    :
+:-----------------------:
+
+- Updates -
+
+Menu system for trainer or pack menu selection
+Top and bottom bar sync FX
+More code comments
+Original protracker file
+
+Get the code at https://github.com/djh0ffman/TinyTro
