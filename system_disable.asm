@@ -29,7 +29,7 @@ system_disable:
 				bne	.gfxok
 
 			; We shouldn't go any further if gfxlib wont open!
-				moveq	#-1,d0
+				moveq	#20,d0
 				rts
 
 			; Save the OS view and copper lists

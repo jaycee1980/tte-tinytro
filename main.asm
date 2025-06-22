@@ -82,14 +82,7 @@ START:			movem.l	d1-d7/a1-a6,-(sp)
 	IF SYSTEM_NICE=1
 			bsr	system_disable
 			tst.b	d0
-			beq	.shutdownok
-
-		; Uh oh, system disable failed.. bail
-			moveq	#20,d0			; "TinyTro failed returncode 20"
-			movem.l	(sp)+,d1-d7/a1-a6
-			rts
-
-.shutdownok:
+			bne	.sysfail
 	ELSE
 		; Assume our VBR is zero!!
 		; TODO: should we do something better than this perhaps?
@@ -197,7 +190,7 @@ START:			movem.l	d1-d7/a1-a6,-(sp)
 	ENDIF
 
 		; exit back to whoever called us!
-			movem.l	(sp)+,d1-d7/a1-a6
+.sysfail:		movem.l	(sp)+,d1-d7/a1-a6
 			rts
 
 
@@ -479,8 +472,6 @@ FontData:		INCBIN	"assets/font.dat"
 CinterTune:		INCBIN	"assets/tune.dat"
 	ENDIF
 
-
-
 TextProg:		dc.l	LogoText
 			dc.l	SCREEN_WIDTH_BYTE*8
 			dc.w	0			; no centring
@@ -627,6 +618,5 @@ _CinterVars:		ds.b	c_SIZE
 	ENDIF
 
 _Vars:			ds.b	Vars_SIZEOF
-
 			EVEN
 	
