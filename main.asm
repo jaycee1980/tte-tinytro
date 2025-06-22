@@ -465,7 +465,7 @@ GfxName:		dc.b	"graphics.library",0
 	ENDIF
 
 	IF USETOPAZ=0
-FontData:		INCBIN	"assets/font.dat"
+FontData:		INCBIN	"assets/topaz13.bin"
 	ENDIF
 
 	IF MUSIC_ON=1
@@ -619,4 +619,3 @@ _CinterVars:		ds.b	c_SIZE
 
 _Vars:			ds.b	Vars_SIZEOF
 			EVEN
-	
