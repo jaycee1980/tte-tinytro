@@ -61,7 +61,7 @@ system_disable:
 
 			; Preserve OS interrupt vectors
 				lea	_SysInterruptVects,a1
-				lea	$64,a0
+				lea	tv_Lev1Int(a0),a0
 				moveq	#6-1,d0
 .ints:				move.l	(a0)+,(a1)+
 				dbf	d0,.ints
@@ -80,8 +80,9 @@ system_restore:			lea	_custom,a6
 				move.w	d0,dmacon(a6)
 
 			; Restore OS interrupt vectors
+				move.l	_VBR,a1
 				lea	_SysInterruptVects,a0
-				lea	$64,a1
+				lea	tv_Lev1Int(a1),a1
 				moveq	#6-1,d0
 .ints:				move.l	(a0)+,(a1)+
 				dbf	d0,.ints
