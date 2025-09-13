@@ -84,9 +84,7 @@ START:			movem.l	d1-d7/a1-a6,-(sp)
 			tst.b	d0
 			bne	.sysfail
 	ELSE
-		; Assume our VBR is zero!!
-		; TODO: should we do something better than this perhaps?
-			suba.l	a0,a0
+			bsr	system_getvbr
 			move.l	a0,_VBR
 	ENDIF
 
@@ -446,9 +444,7 @@ KeyboardIRQ:		movem.l	d0-d1/a0-a1/a6,-(sp)
 ; ---------------------------------------------------------
 ; Included code
 
-	IF SYSTEM_NICE=1
 			INCLUDE	"system_disable.asm"
-	ENDIF
 
 	IF MUSIC_ON=1
 			INCLUDE	"cinter.asm"

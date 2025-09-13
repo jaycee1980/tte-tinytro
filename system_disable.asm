@@ -17,6 +17,8 @@ gb_copinit:		EQU	$26
 SPR0DATA        	equ     spr+sd_dataA
 
 
+	IF SYSTEM_NICE=1
+
 ; Disable the OS but preserve its state for restoration later
 
 system_disable:
@@ -118,6 +120,8 @@ system_doview:			jsr	_LVOLoadView(a6)
 				jsr	_LVOWaitTOF(a6)
 				jmp	_LVOWaitTOF(a6)
 
+
+	ENDIF
 
 ; Return VBR in a0
 
